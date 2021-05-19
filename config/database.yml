@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  database: share-link
+  username: postgres
+  password: root
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
