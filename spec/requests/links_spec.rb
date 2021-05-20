@@ -5,7 +5,6 @@ describe 'Share-Link API', type: :request do
     before do
       FactoryBot.create(:link, title: 'first', text: 'qwe')
       FactoryBot.create(:link, title: 'second', text: 'asd')
-      FactoryBot.create(:link, title: 'third', text: 'zxc')
     end
 
     it 'return all links' do
@@ -27,7 +26,7 @@ describe 'Share-Link API', type: :request do
   end
 
   describe 'DELETE /links/:id' do
-    let!(:link) {FactoryBot.create(:link, title: 'first', text: 'qwe')}
+    let!(:link) {FactoryBot.create(:link, title: 'A new Link', text: 'Something...')}
 
     it 'delete a link' do
       expect {

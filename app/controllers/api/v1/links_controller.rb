@@ -12,6 +12,7 @@ class Api::V1::LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    UpdateSkuJob.perform_later(link_params[:title])
 
     if @link.save
       render json: {status: 'SUCCESS', message: 'Created link', data: @link}, status: :created
