@@ -7,7 +7,6 @@ class Api::V1::LinksController < ApplicationController
   end
 
   def show
-    @link = Link.find(params[:id])
     render json: {status: 'SUCCESS', message: 'Loaded link', data: @link}, status: :ok
   end
 
