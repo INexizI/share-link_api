@@ -6,10 +6,12 @@ ruby '3.0.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'active_model_serializers', '~> 0.10.12'
+gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

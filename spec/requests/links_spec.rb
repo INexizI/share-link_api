@@ -19,7 +19,7 @@ describe 'Share-Link API', type: :request do
     it 'create a new link' do
       expect {
         post '/api/v1/links', params: {link: {title: 'A new Link', text: 'Something...'}}
-      }.to change {Link.count}.from(0).to(1)
+      }.to change {Link.count}.from(4).to(5)
 
       expect(response).to have_http_status(:created)
     end
@@ -31,7 +31,7 @@ describe 'Share-Link API', type: :request do
     it 'delete a link' do
       expect {
         delete "/api/v1/links/#{link.id}"
-      }.to change {Link.count}.from(1).to(0)
+      }.to change {Link.count}.from(5).to(4)
 
       expect(response).to have_http_status(:ok)
     end
