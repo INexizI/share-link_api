@@ -18,10 +18,22 @@ describe 'Share-Link API', type: :request do
   describe 'POST /links' do
     it 'create a new link' do
       expect {
-        post '/api/v1/links', params: {link: {title: 'A new Link', text: 'Something...'}}
+        post '/api/v1/links', params: {
+          link: {title: 'A new Link', text: 'Something...'}
+        }, headers: {"Authorization" => "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4"}
       }.to change {Link.count}.from(4).to(5)
 
       expect(response).to have_http_status(:created)
+      expect(JSON.parse(response.body)).to eq(
+        {
+          'data' => {
+            'text' => 'Something...',
+            'title' => 'A new Link'
+          },
+          'message' => 'Created link',
+          'status' => 'SUCCESS'
+        }
+      )
     end
   end
 

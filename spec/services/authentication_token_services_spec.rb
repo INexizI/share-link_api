@@ -4,7 +4,7 @@ describe AuthenticationTokenServices do
   describe '.call' do
     let (:token) {described_class.call(1)}
     it 'return an authentication token' do
-      hmac_secret = 'my$ecretK3y'
+      hmac_secret = 'nff2nwni.ef2904nf4'
       decoded_token = JWT.decode(
         token,
         described_class::HMAC_SECRET,

@@ -1,5 +1,8 @@
 class Api::V1::LinksController < ApplicationController
+  include ActionController::HttpAuthentication::Token
+
   before_action :set_link, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :destroy]
 
   def index
     @links = Link.all
@@ -16,6 +19,7 @@ class Api::V1::LinksController < ApplicationController
 
     if @link.save
       render json: {status: 'SUCCESS', message: 'Created link', data: @link}, status: :created
+      # render json: {status: 'SUCCESS', message: 'Created link', data: @link.as_json(only: [:text, :title])}, status: :created
     else
       render json: {status: 'ERROR', message: 'Link not created', data: @link.errors}, status: :unprocessable_entity
     end
@@ -37,6 +41,14 @@ class Api::V1::LinksController < ApplicationController
   private
     def set_link
       @link = Link.find(params[:id])
+    end
+
+    def authenticate_user
+      token, _options = token_and_options(request)
+      user_id = AuthenticationTokenServices.decode(token)
+      User.find(user_id)
+    rescue ActiveRecord::RecordNotFound
+      render status: :unauthorized
     end
 
     def link_params

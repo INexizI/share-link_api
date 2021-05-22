@@ -9,7 +9,7 @@ describe 'Authentication', type: :request do
 
       expect(response).to have_http_status(:created)
       expect(JSON.parse(response.body)).to eq({
-        'token' => 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1fQ.YdUeKzPfpTFVgbh0nu3t0s4Z-zIHA6ocRV1sww29flg'
+        'token' => 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1fQ.3jALXFq3KBCZf4QCe1y-6z7mBwrPwimnx3C9TngBeWg'
       })
     end
 
