@@ -1,18 +1,19 @@
-default: &default
+development:
   adapter: postgresql
   encoding: utf8
-  database: share-link
-  username: postgres
-  password: root
-  host: localhost
+  database: <%= Rails.application.secrets.DB_DATABASE %>
+  username: <%= Rails.application.secrets.DB_USERNAME %>
+  password: <%= Rails.application.secrets.DB_PASSWORD %>
+  host: <%= Rails.application.secrets.DB_HOST %>
   pool: 5
   timeout: 5000
 
-development:
-  <<: *default
-
-test:
-  <<: *default
-
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: utf8
+  database: <%= Rails.application.secrets.DB_DATABASE %>
+  username: <%= Rails.application.secrets.DB_USERNAME %>
+  password: <%= Rails.application.secrets.DB_PASSWORD %>
+  host: <%= Rails.application.secrets.DB_HOST %>
+  pool: 5
+  timeout: 5000
