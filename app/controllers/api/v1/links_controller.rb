@@ -40,7 +40,7 @@ class Api::V1::LinksController < ApplicationController
 
   private
     def set_link
-      @link = Link.find(params[:id])
+      @link = Link.friendly.find(params[:id])
     end
 
     def authenticate_user
@@ -52,6 +52,6 @@ class Api::V1::LinksController < ApplicationController
     end
 
     def link_params
-      params.require(:link).permit(:title, :text)
+      params.require(:link).permit(:text)
     end
 end

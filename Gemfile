@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'active_model_serializers', '~> 0.10.12'
+gem 'friendly_id', '~> 5.4.0'
 gem 'jwt'
 
 group :development, :test do
