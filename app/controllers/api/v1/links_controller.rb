@@ -7,12 +7,12 @@ class Api::V1::LinksController < ApplicationController
   def index
     @links = Link.all
     # render json: {status: 'SUCCESS', message: 'Loaded links', data: @links.as_json(only: [:text, :slug])}, status: :ok
-    render json: {data: @links.as_json(only: [:text, :slug])}, status: :ok
+    render json: @links.as_json(only: [:text, :slug]), status: :ok
   end
 
   def show
     # render json: {status: 'SUCCESS', message: 'Loaded link', data: @link.as_json(only: :text)}, status: :ok
-    render json: {data: @link.as_json(only: :text)}, status: :ok
+    render json: @link.as_json(only: :text), status: :ok
   end
 
   def create
