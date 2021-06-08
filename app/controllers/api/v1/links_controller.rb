@@ -17,22 +17,22 @@ class Api::V1::LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    UpdateSkuJob.perform_later(link_params[:title])
 
     if @link.save
+      UpdateSkuJob.perform_later(@link)
       render json: {status: 'SUCCESS', message: 'Created link', data: @link}, status: :created
     else
       render json: {status: 'ERROR', message: 'Link not created', data: @link.errors}, status: :unprocessable_entity
     end
   end
 
-  def update
-    if @link.update(link_params)
-      render json: {status: 'SUCCESS', message: 'Updated link', data: @link}, status: :created
-    else
-      render json: {status: 'ERROR', message: 'Link not updated', data: @link.errors}, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @link.update(link_params)
+  #     render json: {status: 'SUCCESS', message: 'Updated link', data: @link}, status: :created
+  #   else
+  #     render json: {status: 'ERROR', message: 'Link not updated', data: @link.errors}, status: :unprocessable_entity
+  #   end
+  # end
 
   def destroy
     @link.destroy
