@@ -5,7 +5,7 @@ ruby '3.0.0'
 
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.6'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sidekiq', '>= 7.0.0'
 gem 'bootsnap', '>= 1.4.4', require: false
