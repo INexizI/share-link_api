@@ -2,7 +2,7 @@ class Api::V1::LinksController < ApplicationController
   include ActionController::HttpAuthentication::Token
 
   before_action :set_link, only: [:show, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :destroy]
+  # before_action :authenticate_user!, only: [:create, :destroy]
 
   def index
     @links = Link.all

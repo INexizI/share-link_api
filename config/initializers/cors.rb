@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://kr-calc.herokuapp.com/', 'https://www.kr-calc.com'
+    origins 'https://kr-calc.herokuapp.com/', 'https://www.kr-calc.com', 'http://localhost:4444'
     resource '*', headers: :any, methods: [:get, :post]
   end
 end

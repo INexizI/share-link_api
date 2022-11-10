@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.1'
 
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -13,6 +13,10 @@ gem 'active_model_serializers', '~> 0.10.12'
 gem 'friendly_id', '~> 5.4.2'
 gem 'jwt'
 gem 'rack-cors'
+
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
