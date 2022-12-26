@@ -9,7 +9,7 @@ gem 'puma', '~> 5.6'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sidekiq', '>= 7.0.0'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'active_model_serializers', '~> 0.10.12'
+gem 'active_model_serializers', '~> 0.10.13'
 gem 'friendly_id', '~> 5.4.2'
 gem 'jwt'
 gem 'rack-cors'
