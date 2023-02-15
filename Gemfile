@@ -3,11 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.6'
 gem 'bcrypt', '~> 3.1.7'
-gem 'sidekiq', '>= 7.0.0'
+gem 'sidekiq', '>= 7.0.1'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'active_model_serializers', '~> 0.10.13'
 gem 'friendly_id', '~> 5.4.2'
