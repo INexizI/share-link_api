@@ -178,7 +178,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    sidekiq (7.0.7)
+    sidekiq (7.0.8)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
@@ -220,7 +220,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.7, >= 6.1.7.3)
   rspec-rails
-  sidekiq (>= 7.0.1)
+  sidekiq (>= 7.0.8)
   spring
   tzinfo-data
 
