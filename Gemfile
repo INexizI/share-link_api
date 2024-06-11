@@ -20,8 +20,8 @@ gem 'net-pop', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '>= 6.0.3'
-  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails', '>= 6.3.0'
 end
 
 group :development do
