@@ -5,7 +5,11 @@ ruby '3.1.3'
 
 gem 'rails', '~> 7.1.0'
 gem 'pg', '>= 0.18', '< 2.0'
+<<<<<<< snyk-fix-19245a06e797efb120223111c0c454d9
+gem 'puma', '~> 5.6', '>= 5.6.8'
+=======
 gem 'puma', '~> 5.6', '>= 5.6.7'
+>>>>>>> master
 gem 'bcrypt', '~> 3.1.7'
 gem 'sidekiq', '>= 7.1.3'
 gem 'bootsnap', '>= 1.4.4', require: false
