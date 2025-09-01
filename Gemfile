@@ -15,7 +15,7 @@ gem 'jwt'
 gem 'rack-cors', '>= 3.0.0'
 
 gem 'net-smtp', require: false
-gem 'net-imap', require: false
+gem 'net-imap', '>= 0.5.6', require: false
 gem 'net-pop', require: false
 
 group :development, :test do
